@@ -1,7 +1,12 @@
 
 
-<h1>Lista de usuários</h1>
+@extends('layouts.app')
 
+@section('title', 'Listagem de usuários')
+
+@section('content')
+
+<h1>Lista de usuários</h1>
 
 <ul>
     @foreach($users as $user)
@@ -14,3 +19,5 @@
 
     @endforeach
 </ul>
+
+@endsection
