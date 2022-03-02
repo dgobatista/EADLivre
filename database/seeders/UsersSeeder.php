@@ -6,17 +6,19 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            UsersSeeder::class,
+        User::create([
+            'name' => 'Diego Batista',
+            'email' => 'diego@casadeapostas.com',
+            'password' => bcrypt('12345678'),
         ]);
     }
 }
