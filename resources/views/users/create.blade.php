@@ -5,8 +5,7 @@
 
 
 @section('content') 
-    
-<h1>Novo usuário</h1>
+
 
 @include('includes.validations-form')
 
