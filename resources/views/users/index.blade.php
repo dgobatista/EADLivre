@@ -1,91 +1,96 @@
 @extends('layouts.master')
 
-@section('title', 'Listagem de usuários')
+@section('title', 'Usuários')
 
 @section('css')
-<!-- DataTables -->
-<link href="{{ URL::asset('plugins/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('plugins/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Responsive datatable examples -->
-<link href="{{ URL::asset('plugins/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endsection
 
-
-
 @section('breadcrumb')
-<div class="col-sm-6">
-    <h4 class="page-title">Usuários</h4>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0);">Cda</a></li>
-        <li class="breadcrumb-item"><a href="javascript:void(0);">Config</a></li>
-    </ol>
-</div>                          
+    <div class="row align-items-center">
+        <div class="col">
+            <!-- Page pre-title -->
+            <div class="page-pretitle">
+                Overview
+            </div>
+            <h2 class="page-title">
+                Usuários
+            </h2>
+        </div>
+        <!-- Page title actions -->
+        <div class="col-auto ms-auto d-print-none">
+            <div class="btn-list">
+                <a href="/users/create" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
+                    data-bs-target="#modal-report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Criar usuário
+                </a>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('content')
-<div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
 
-                                        <h4 class="mt-0 header-title">Listagem de usuários</h4>
-                                        <p class="text-muted m-b-30">Configuração dos usuários.
-                                        </p>
+    <div class="container-xl">
+        <div class="row row-cards">
+            <div class="col-12">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-vcenter table-mobile-md card-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>E-mail</th>
+                                    <th>Comentários</th>
+                                    <th class="w-1"></th>
+                                    <th class="w-1"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                                        <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>E-mail</th>
-                                                <th>Comentários</th>
-                                                <th></th>
-                                                <th></th>
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>Teste</td>
+                                        <td>
+                                            <div class="btn-list flex-nowrap">
+                                                <a href="{{ route('users.edit', $user->id) }}" class="btn">
+                                                    Edit
+                                                </a>
+                                                <div class="dropdown">
+                                                    <button class="btn dropdown-toggle align-text-top"
+                                                        data-bs-toggle="dropdown">
+                                                        Actions
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#">
+                                                            Delete
+                                                        </a>
+                                                        <a class="dropdown-item" href="#">
+                                                            View
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-                                            </tr>
-                                        </thead>
-                                            <tbody>
+        </div>
+    </div>
 
-                                                
-                                                    @foreach($users as $user)        
-                                                    <tr>                              
-                                                        <td>{{ $user-> name }}</td>
-                                                        <td>{{ $user-> email }}</td>
-                                                        <td>xxx</td>          
-                                                        <td><a href="{{ route('users.edit', $user->id) }}"><button type="button" class="btn btn-primary btn-sm">Editar</button></a></td>
-                                                        <td><a href="{{ route('users.show', $user->id) }}"><button type="button" class="btn btn-primary btn-sm">Detalhes</button></a></td>
-                                     
-                                                    </tr>
-                                                    @endforeach
-                                                
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
-
-       
-@endsection
-
-@section('script')      
-<!-- Required datatable js -->
-<script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<!-- Buttons examples -->
-<script src="{{ URL::asset('plugins/datatables/dataTables.buttons.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/pdfmake.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/vfs_fonts.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/buttons.html5.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/buttons.print.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/buttons.colVis.min.js') }}"></script>
-<!-- Responsive examples -->
-<script src="{{ URL::asset('plugins/datatables/dataTables.responsive.min.js') }}"></script>
-<script src="{{ URL::asset('plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
-
-<!-- Datatable init js -->
-<script src="{{ URL::asset('assets/pages/datatables.init.js') }}"></script>   
 
 @endsection

@@ -1,118 +1,88 @@
-   <!-- Top Bar Start -->
-   <div class="topbar">
-
-<!-- LOGO -->
-<div class="topbar-left">
-    <a href="index.html" class="logo">
-        <span>
-                <img src="assets/images/logo-light.png" alt="" height="18">
-            </span>
-        <i>
-                <img src="assets/images/logo-sm.png" alt="" height="22">
-            </i>
-    </a>
-</div>
-
-<nav class="navbar-custom">
-    <ul class="navbar-right d-flex list-inline float-right mb-0">
-        <li class="dropdown notification-list d-none d-md-block">
-            <form role="search" class="app-search">
-                <div class="form-group mb-0">
-                    <input type="text" class="form-control" placeholder="Search..">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </div>
-            </form>
-        </li>
-
-
-
-        <!-- notification -->
-        <li class="dropdown notification-list">
-            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <i class="mdi mdi-bell-outline noti-icon"></i>
-                <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
+<header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
+    <div class="container-xl">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav flex-row order-md-last">
+            <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip"
+                data-bs-placement="bottom">
+                <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                </svg>
             </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
-                <!-- item-->
-                <h6 class="dropdown-item-text">
-                        Notifications (258)
-                    </h6>
-                <div class="slimscroll notification-item-list">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                        <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
-                        <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon bg-warning"><i class="mdi mdi-message-text-outline"></i></div>
-                        <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon bg-info"><i class="mdi mdi-glass-cocktail"></i></div>
-                        <p class="notify-details">Your item is shipped<span class="text-muted">It is a long established fact that a reader will</span></p>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
-                        <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i></div>
-                        <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>
-                    </a>
-                </div>
-                <!-- All-->
-                <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
-                        View all <i class="fi-arrow-right"></i>
-                    </a>
-            </div>
-        </li>
-        <li class="dropdown notification-list">
-            <div class="dropdown notification-list nav-pro-img">
-                <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="assets/images/users/user-4.jpg" alt="user" class="rounded-circle">
+            <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode"
+                data-bs-toggle="tooltip" data-bs-placement="bottom">
+                <!-- Download SVG icon from http://tabler-icons.io/i/sun -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="12" cy="12" r="4" />
+                    <path
+                        d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                </svg>
+            </a>
+            <div class="nav-item dropdown d-none d-md-flex me-3">
+                <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
+                    aria-label="Show notifications">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                        <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                    </svg>
+                    <span class="badge bg-red"></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                    <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i> My Wallet</a>
-                    <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings m-r-5"></i> Settings</a>
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i> Lock screen</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-card">
+                    <div class="card">
+                        <div class="card-body">
+                            Teste de notificação.
+                        </div>
+                    </div>
                 </div>
             </div>
-        </li>
-
-    </ul>
-
-    <ul class="list-inline menu-left mb-0">
-        <li class="float-left">
-            <button class="button-menu-mobile open-left waves-effect">
-                <i class="mdi mdi-menu"></i>
-            </button>
-        </li>
-        <li class="d-none d-sm-block">
-            <div class="dropdown pt-3 d-inline-block">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Create
-                    </a>
-
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
+                    aria-label="Open user menu">
+                    <span class="avatar avatar-sm" style="background-image: url(assets/static/avatars/000m.jpg)"></span>
+                    <div class="d-none d-xl-block ps-2">
+                        <div>Jimmy</div>
+                        <div class="mt-1 small text-muted">Product</div>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <a href="#" class="dropdown-item">Set status</a>
+                    <a href="#" class="dropdown-item">Profile & account</a>
+                    <a href="#" class="dropdown-item">Feedback</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
+                    <a href="#" class="dropdown-item">Settings</a>
+                    <a href="#" class="dropdown-item">Logout</a>
                 </div>
             </div>
-        </li>
-    </ul>
-
-</nav>
-
-</div>
-<!-- Top Bar End -->
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <div>
+                <form action="." method="get">
+                    <div class="input-icon">
+                        <span class="input-icon-addon">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="10" cy="10" r="7" />
+                                <line x1="21" y1="21" x2="15" y2="15" />
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Search…" aria-label="Search in website">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>

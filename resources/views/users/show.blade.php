@@ -4,6 +4,7 @@
 @section('title', 'Listagem do usuário')
 
 
+
 @section('content') 
     
 <h1>Listagem do usuário - {{ $user->name }}</h1>
@@ -13,5 +14,8 @@
     <li>{{ $user->name}}</li>
     <li>{{ $user->email}}</li>
 </ul>
+
+
+
 
 @endsection
