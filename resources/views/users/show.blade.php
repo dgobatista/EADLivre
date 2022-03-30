@@ -15,7 +15,4 @@
     <li>{{ $user->email}}</li>
 </ul>
 
-
-
-
 @endsection
